@@ -72,3 +72,35 @@ int main() {
 }
 
 #problem 5:
+#include <iostream>
+using namespace std;
+struct strInfo {
+	int age;
+	bool drivinglicense;
+	string mediation;
+};
+strInfo readinfo() {
+	strInfo info;
+	cout << "Enter your age: ";
+	cin >> info.age;
+	cout << "Do you have a driver license? ";
+	cin >> info.drivinglicense;
+	cout << "Did you have a mediation?\nAnswer whith yes or no: ";
+	cin >> info.mediation;
+	return info;
+}
+bool comparation(strInfo info) {
+	return (info.age >= 18 && info.drivinglicense == 1 || info.mediation == "yes");
+}
+void printresult(strInfo info) {
+	if (comparation(info)) {
+		cout << "\nHired!\n";
+	}
+	else
+		cout << "\nRejecred\n";
+}
+int main() {
+	printresult(readinfo());
+}
+
+problem 6:
