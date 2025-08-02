@@ -131,3 +131,21 @@ int main() {
 }
 
 problem #7:
+#include <iostream>
+using namespace std;
+int readnumber(int &number) {
+	cout << "enter a number: ";
+	cin >> number;
+	return number;
+}
+void counthalf(int number) {
+	int half = 0;
+	half = number / 2;
+	cout << "the half of " << number << " is " << half;
+}
+int main() {
+	int number;
+	counthalf(readnumber(number));
+}
+
+problem #8:
