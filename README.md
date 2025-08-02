@@ -71,7 +71,7 @@ int main() {
 	printresult(readinfo());
 }
 
-#problem 5:
+problem #5:
 #include <iostream>
 using namespace std;
 struct strInfo {
@@ -103,4 +103,31 @@ int main() {
 	printresult(readinfo());
 }
 
-problem 6:
+problem #6:
+#include <iostream>
+using namespace std;
+struct stname {
+	string firstname;
+	string lastname;
+};
+stname readname() {
+	stname name;
+	cout << "enter your first name: ";
+	cin >> name.firstname;
+	cout << "enter your last name:";
+	cin >> name.lastname;
+	return name;
+}
+string getfullname(stname name) {
+	string fullname = "";
+	fullname = name.firstname + " " + name.lastname;
+	return fullname;
+}
+void printfullname(string fullname) {
+	cout << "\n\tyour full name: " << fullname << endl;
+}
+int main() {
+	printfullname(getfullname(readname()));
+}
+
+problem #7:
