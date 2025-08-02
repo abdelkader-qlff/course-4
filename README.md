@@ -149,3 +149,25 @@ int main() {
 }
 
 problem #8:
+#include <iostream>
+using namespace std;
+int readmark() {
+	int mark;
+	cout << "enter your mark: ";
+	cin >> mark;
+	return mark;
+}
+bool comparation(int mark) {
+	return mark >= 50;
+}
+void result(int mark) {
+	if (comparation(mark))
+		cout << "Pass!";
+	else
+		cout << "Fail!";
+}
+int main() {
+	result(readmark());
+}
+
+problem #9:
