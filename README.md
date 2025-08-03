@@ -197,3 +197,31 @@ int main() {
 }
 
 problem #9:
+#include <iostream>
+using namespace std;
+struct numbers {
+	int num1, num2, num3;
+};
+numbers readnumbers() {
+	numbers number;
+	cout << "enter first number: ";
+	cin >> number.num1;
+	cout << "enter second number: ";
+	cin >> number.num2;
+	cout << "enter last number: ";
+	cin >> number.num3;
+	return number;
+}
+int count(numbers number) {
+	int result = 0;
+	result = number.num1 + number.num2 + number.num3;
+	return result;
+}
+void printsum(int result) {
+	cout << "\nsum numbers: " << result << endl;
+}
+int main() {
+	printsum(count(readnumbers()));
+}
+
+problem #10:
