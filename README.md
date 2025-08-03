@@ -149,6 +149,7 @@ int main() {
 }
 
 problem #8:
+1-first way:
 #include <iostream>
 using namespace std;
 int readmark() {
@@ -168,6 +169,31 @@ void result(int mark) {
 }
 int main() {
 	result(readmark());
+}
+2-second way:
+#include <iostream>
+using namespace std;
+enum enpassfail { pass = 1, fail = 0 };
+int readmark(int &mark) {
+	cout << "enter your mark: ";
+	cin >> mark;
+	return mark;
+}
+enpassfail checkmark(int mark) {
+	if (mark >= 50)
+		return enpassfail::pass;
+	else
+		return enpassfail::fail;
+}
+void printmark(int mark) {
+	if (checkmark(mark) == enpassfail::pass)
+		cout << "Pass!";
+	else
+		cout << "Fail!";
+}
+int main() {
+	int mark;
+	printmark(readmark(mark));
 }
 
 problem #9:
