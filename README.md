@@ -225,3 +225,25 @@ int main() {
 }
 
 problem #10:
+#include <iostream>
+#include <cmath>
+using namespace std;
+void readmarks(int& mark1, int& mark2, int& mark3) {
+	cout << "enter your first mark: ";
+	cin >> mark1;
+	cout << "enter second mark: ";
+	cin >> mark2;
+	cout << "enter third mark: ";
+	cin >> mark3;
+}
+float calculateaverage(int mark1, int mark2, int mark3) {
+	return (float)(mark1 + mark2 + mark3) / 3;
+}
+void printaverage(float average) {
+	cout << "your average marks: " << average << endl;
+}
+int main() {
+	int mark1, mark2, mark3; 
+	readmarks(mark1, mark2, mark3);
+	printaverage(calculateaverage(mark1, mark2, mark3));
+}
