@@ -312,3 +312,32 @@ int main() {
 }
 
 problem #13:
+#include <iostream>
+#include <cmath>
+using namespace std;
+void readnums(int& num1, int& num2, int& num3) {
+	cout << "enter number 1:\n";
+	cin >> num1;
+	cout << "enter number 2:\n";
+	cin >> num2;
+	cout << "enter number 3:\n";
+	cin >> num3;
+}
+int comparation(int num1, int num2, int num3) {
+	if (num1 >= num2 && num1 >= num3)
+		return num1;
+	else if (num2 >= num1 && num2 >= num3)
+		return num2;
+	else
+		return num3;
+}
+void printresult(int max) {
+	cout << "\nthe greater number is: " << max << endl;
+}
+int main() {
+	int num1,num2,num3;
+	readnums(num1, num2, num3);
+	printresult(comparation(num1, num2, num3));
+}
+
+problem #14:
