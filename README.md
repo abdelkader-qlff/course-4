@@ -247,3 +247,40 @@ int main() {
 	readmarks(mark1, mark2, mark3);
 	printaverage(calculateaverage(mark1, mark2, mark3));
 }
+
+problem #11:
+#include <iostream>
+using namespace std;
+enum enpassfail { pass = 1, fail = 0 };
+void readmarks(int& mark1, int& mark2, int& mark3) {
+	cout << "enter your first mark: ";
+	cin >> mark1;
+	cout << "enter second mark: ";
+	cin >> mark2;
+	cout << "enter third mark: ";
+	cin >> mark3;
+}
+int summarks(int mark1, int mark2, int mark3) {
+	return mark1 + mark2 + mark3;
+}
+float calculateaverage(int mark1, int mark2, int mark3) {
+	return (float)summarks(mark1,mark2,mark3) / 3;
+}
+enpassfail checkaverage(float average) {
+	if (average >= 50)
+		return enpassfail::pass;
+	else
+		return enpassfail::fail;
+}
+void printaverage(float average) {
+	cout << "\n\tyour average is: " << average << endl;
+	if (checkaverage(average) == enpassfail::pass)
+		cout << "\nPass!\n";
+	else
+		cout << "\nFail!\n";
+}
+int main() {
+	int mark1, mark2, mark3;
+	readmarks(mark1, mark2, mark3);
+	printaverage(calculateaverage(mark1,mark2,mark3));
+}
