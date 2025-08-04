@@ -284,3 +284,31 @@ int main() {
 	readmarks(mark1, mark2, mark3);
 	printaverage(calculateaverage(mark1,mark2,mark3));
 }
+
+problem #12:
+#include <iostream>
+#include <cmath>
+using namespace std;
+void readnum(int& num1, int& num2) {
+	cout << "enter number 1: \n";
+	cin >> num1;
+	cout << "enter number 2: \n";
+	cin >> num2;
+}
+int comparation(int num1, int num2) {
+	return num1 > num2;
+}
+void printresult(int num1, int num2) {
+	if (comparation(num1,num2))
+		cout << "the first number is greater than the second number\n";
+	else
+		cout<< "the second number is greater than the first number\n";
+}
+int main() {
+	int num1, num2;
+	readnum(num1, num2);
+	comparation(num1, num2);
+	printresult(num1,num2);
+}
+
+problem #13:
