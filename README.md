@@ -367,3 +367,24 @@ int main() {
 }
 
 problem #15:
+#include <iostream>
+using namespace std;
+void readinfo(int& A, int& B) {
+	cout << "enter A: ";
+	cin >> A;
+	cout << "enter B: ";
+	cin >> B;
+}
+int countrectanglearea(int A, int B) {
+	return A * B;
+}
+void printresult(int A, int B) {
+	;
+	cout << "\n\tThe rectangle area: " << countrectanglearea(A, B) << endl;
+}
+int main() {
+	int A, B; readinfo(A, B);
+	printresult(A,B);
+}
+
+problem #16:
