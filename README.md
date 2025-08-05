@@ -378,13 +378,14 @@ void readinfo(int& A, int& B) {
 int countrectanglearea(int A, int B) {
 	return A * B;
 }
-void printresult(int A, int B) {
+void printresult(int area) {
 	;
-	cout << "\n\tThe rectangle area: " << countrectanglearea(A, B) << endl;
+	cout << "\n\tThe rectangle area: " << area << endl;
 }
 int main() {
-	int A, B; readinfo(A, B);
-	printresult(A,B);
+	int A, B; 
+ 	readinfo(A, B);
+	printresult(countrectanglearea(A, B));
 }
 
 problem #16:
