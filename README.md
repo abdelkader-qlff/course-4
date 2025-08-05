@@ -389,3 +389,25 @@ int main() {
 }
 
 problem #16:
+#include <iostream>
+#include <cmath>
+using namespace std;
+void readinfo(int& a, int& d) {
+	cout << "enter the side of rectangle: ";
+	cin >> a;
+	cout << "enter tje diagonal of rectangle: ";
+	cin >> d;
+}
+float countrectanglearea(int a, int d) {
+	return a * sqrt(pow(d, 2) - pow(a, 2));
+}
+void printresult(float area) {
+	cout << "\n\tThe rectangle area: " << area << endl;
+}
+int main() {
+	int a,d; 
+	readinfo(a,d);
+	printresult(countrectanglearea(a,d));
+}
+
+problem 17:
