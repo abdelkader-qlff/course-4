@@ -341,3 +341,29 @@ int main() {
 }
 
 problem #14:
+#include <iostream>
+using namespace std;
+void readnums(int& num1, int& num2) {
+	cout << "enter the first number: \n";
+	cin >> num1;
+	cout << "enter the second number: \n";
+	cin >> num2;
+}
+void swapnums(int& A, int& B) {
+	/*int num1{}, num2{};*/
+	int temp = A;
+	A = B;
+	B = temp;
+}
+void printswapnums(int num1, int num2) {
+	cout << "The result of swap numbers: \nnumber 1 = " << num1 << endl << "number 2 = " << num2 << endl;
+}
+int main() {
+	int num1, num2;
+	readnums(num1, num2);
+	printswapnums(num1, num2);
+	swapnums(num1, num2);
+	printswapnums(num1, num2);
+}
+
+problem #15:
