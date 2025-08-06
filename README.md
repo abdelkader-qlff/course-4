@@ -410,4 +410,69 @@ int main() {
 	printresult(countrectanglearea(a,d));
 }
 
-problem 17:
+problem #18:
+#include <iostream>
+#include <cmath>
+using namespace std;
+void readinfo(int& r) {
+	cout << "enter r: \n";
+	cin >> r;
+}
+float calculatecirlearea(int r) {
+	const float PI = 3.14;
+	float area = PI * pow(r, 2);
+	return area;
+}
+void printcirclearea(float area) {
+	cout << "\nThe circle area is: " << area << endl;
+}
+int main() {
+	int r, area;
+	readinfo(r);
+	printcirclearea(calculatecirlearea(r));
+}
+
+problem #19:
+#include <iostream>
+#include <cmath>
+using namespace std;
+void readinfo(int& D) {
+	cout << "enter D: \n";
+	cin >> D;
+}
+float calculatecirlearea(int D) {
+	const float PI = 3.14;
+	float area = (PI * pow(D, 2)) / 4;
+	return area;
+}
+void printcirclearea(float area) {
+	cout << "\nThe circle area is: " << area << endl;
+}
+int main() {
+	int r, area;
+	readinfo(r);
+	printcirclearea(calculatecirlearea(r));
+}
+
+problem #20:
+#include <iostream>
+using namespace std;
+float readinfo() {
+	int A;
+	cout << "enter A: \n";
+	cin >> A;
+	return A;
+}
+float calculatecircleareabysquare(int A) {
+	const float PI = 3.1415;
+	float circlearea = (PI * pow(A, 2)) / 4;
+	return circlearea;
+}
+void printcirclearea(float circlearea) {
+	cout << "\n\tThe circle area inscribed in a square: " << circlearea << endl;
+}
+int main() {
+	printcirclearea(calculatecircleareabysquare(readinfo()));
+}
+
+problem #21:
