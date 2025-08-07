@@ -500,3 +500,54 @@ int main() {
 }
 
 problem #22:
+#include <iostream>
+#include <cmath>
+using namespace std;
+void readinfo(int& A,int& B) {
+	cout << "enter A: \n";
+	cin >> A;
+	cout << "enter B: \n";
+	cin >> B;
+}
+float calculatecirclearea(float A, float B) {
+	const float PI = 3.1415;
+	float circlearea = PI * (pow(B,2)/4)*((2*A-B)/(2*A+B));
+	return circlearea;
+}
+void printresult(float area) {
+	cout << "\n\tCircle area inscribed in an isosceles triangle: " << area << endl;
+}
+int main() {
+	int A, B;
+	readinfo(A, B);
+	printresult(calculatecirclearea(A,B));
+}
+
+problem #23:
+#include <iostream>
+#include <cmath>
+using namespace std;
+void readinfo(float& A, float& B, float& C) {
+	cout << "enter A: \n";
+	cin >> A;
+	cout << "enter B: \n";
+	cin >> B;
+	cout << "enter C: \n";
+	cin >> C;
+}
+float calculatecirclearea(float A, float B,float C) {
+	const float PI = 3.1415;
+	float p = (A + B + C) / 2;
+	float area = PI * pow((A * B * C) / (4 * sqrt(p * (p - A) * (p - B) * (p - C))),2);
+	return area;
+}
+void printresult(float area) {
+	cout << "\n\tCircle area inscribed in an isosceles triangle: " << area << endl;
+}
+int main() {
+	float A,B,C;
+	readinfo(A, B, C);
+	printresult(calculatecirclearea(A,B,C));
+}
+
+problem #24:
