@@ -476,3 +476,27 @@ int main() {
 }
 
 problem #21:
+#include <iostream>
+using namespace std;
+#include <iostream>
+#include <cmath>
+using namespace std;
+int readinfo() {
+	int L;
+	cout << "enter L: \n";
+	cin >> L;
+	return L;
+}
+float calculatecirclearea(int L) {
+	const float PI = 3.1415;
+	float circlearea = pow(L, 2) / (4 * PI);
+	return circlearea;
+}
+void printresult(float area) {
+	cout << "\n\tCircle area along the circumference: " << area << endl;
+}
+int main() {
+	printresult(calculatecirclearea(readinfo()));
+}
+
+problem #22:
