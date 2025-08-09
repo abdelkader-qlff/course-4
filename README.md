@@ -551,3 +551,69 @@ int main() {
 }
 
 problem #24:
+
+
+problem #25:
+#include <iostream>
+using namespace std;
+int readage(int& age) {
+	cout << "enter your age(must be between 18 and 45):\n";
+	cin >> age;
+	return age;
+}
+bool checkage(int age, int from, int to) {
+	return age >= from && age <= to;
+}
+int loopchecking(int from, int to) {
+	int age = 0;
+	do {
+		age = readage(age);
+	} while (!checkage(age, from, to));
+	return age;
+}
+void printage(int age) {
+	cout << "\n\tyour age: " << age << endl;
+}
+int main() {
+	printage(loopchecking(18, 45));
+}
+
+problem #26:
+#include <iostream>
+using namespace std;
+int readnumber(int &N) {
+	cout << "enter a number: \n";
+	cin >> N;
+	return N;
+}
+void from1toNbyfor(int N) {
+	cout << "with for loop:\n";
+	for (int i = 1; i <= N; i++) {
+		cout << i << endl;
+	}
+}
+void from1toNbywhile(int N) {
+	int i = 1;
+	cout << "with while loop:\n";
+	while (i <= N) {
+		cout << i << endl;
+		i++;
+	}
+}
+void from1toNbydowhile(int N) {
+	int i = 1;
+	cout << "with do while loop:\n";
+	do {
+		cout << i << endl;
+		i++;
+	} while (i <= N);
+}
+int main() {
+	int N;
+	readnumber(N);
+	from1toNbyfor(N);
+	from1toNbywhile(N);
+	from1toNbydowhile(N);
+}
+
+problem #27:
