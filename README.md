@@ -617,3 +617,160 @@ int main() {
 }
 
 problem #27:
+#include <iostream>
+using namespace std;
+enum enoddoreven { odd = 1, even = 2 };
+void readnum(int& N) {
+	cout << "enter your number: ";
+	cin >> N;
+}
+enoddoreven checkoddoreven(int N) {
+	if (N % 2 != 0)
+		return enoddoreven::odd;
+	else
+		return enoddoreven::even;
+}
+void sumoddnumberbyfor(int N) {
+	int sum = 0;
+	cout << "\tsum odd numbers by for loop: ";
+	for (int i = 1; i < N; i++) {
+		if (checkoddoreven(i) == enoddoreven::odd)
+			sum += i;
+	}
+	cout << sum << endl;
+}
+void sumoddnumbersbywhile(int N) {
+	int i = 0;
+	int sum = 0;
+	cout << "\tsum odd numbers by while loop: ";
+	while (i < N) {
+		i++;
+		if (checkoddoreven(i) == enoddoreven::odd)
+			sum += i;
+	}
+	cout << sum << endl;
+}
+void sumoddnumbersbydowhile(int N) {
+	int i = 0;
+	int sum = 0;
+	cout << "\tsum odd numbers by do while loop: ";
+	do {
+		i++;
+		if(checkoddoreven(i)==enoddoreven::odd)
+			sum += i;
+	} while (i < N);
+	cout << sum << endl;
+}
+int main() {
+	int N;
+	readnum(N);
+	sumoddnumberbyfor(N);
+	sumoddnumbersbywhile(N);
+	sumoddnumbersbydowhile(N);
+}
+
+problem #28:
+#include <iostream>
+using namespace std;
+enum enoddoreven { odd = 1, even = 2 };
+int readnum() {
+	int N;
+	cout << "enter a number: ";
+	cin >> N;
+	return N;
+}
+enoddoreven checknum(int N) {
+	if (N % 2 == 0)
+		return enoddoreven::even;
+	else
+		return enoddoreven::odd;
+}
+void sumevennumsbyfor(int N) {
+	int sum = 0;
+	cout << "sum of even numbers by for loop: ";
+	for (int counter = 0; counter < N; ) {
+		counter++;
+		if (checknum(counter) == enoddoreven::even) {
+			sum += counter;
+		}
+	}
+	cout << sum << endl;
+}
+void sumevennumsbywhile(int N) {
+	int sum = 0;
+	int counter = 0;
+	cout << "sum of even numbers by while loop: ";
+	while (counter < N) {
+		counter++;
+		if (checknum(counter) == enoddoreven::even) {
+			sum += counter;
+		}
+	}
+	cout << sum << endl;
+}
+void sumevennumsbydowhile(int N) {
+	int sum = 0;
+	int counter = 0;
+	cout << "sum of even numbers by do while loop: ";
+	do {
+		counter++;
+		if (checknum(counter) == enoddoreven::even)
+			sum += counter;
+	} while (counter < N);
+	cout << sum << endl;
+}
+int main() {
+	int N = readnum();
+	sumevennumsbyfor(N);
+	sumevennumsbywhile(N);
+	sumevennumsbydowhile(N);
+}
+
+problem #30:
+#include <iostream>
+using namespace std;
+enum enoddoreven { odd = 1, even = 2 };
+int readnum() {
+	int N;
+	do {
+		cout << "enter a number: ";
+		cin >> N;
+	} while (N <= 0);
+	return N;
+}
+void sumevennumsbyfor(int N) {
+	int factorial = 1;
+	cout << "factorial of numbers by for loop: ";
+	for (int counter = N; counter >= 1; counter--) {
+		factorial *= counter;
+	}
+	cout << factorial << endl;
+}
+void sumevennumsbywhile(int N) {
+	int factorial= 1;
+	int counter = 0;
+	cout << "factorial of numbers by while loop: ";
+	while (counter < N) {
+		counter++;
+		factorial *= counter;
+	}
+	cout << factorial << endl;
+}
+void sumevennumsbydowhile(int N) {
+	int factorial = 1;
+	int counter = 0;
+	cout << "factorial of numbers by do while loop: ";
+	do {
+		counter++;
+		factorial *= counter;
+	} while (counter < N);
+	cout << factorial << endl;
+}
+int main() {
+	int N = readnum();
+	sumevennumsbyfor(N);
+	sumevennumsbywhile(N);
+	sumevennumsbydowhile(N);
+}
+
+problem #31:
