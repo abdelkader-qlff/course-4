@@ -800,4 +800,25 @@ int main() {
 	cout << N << " power 4 is: " << powof4(N) << endl;
 }
 
-problem #31:
+problem #32:
+#include <iostream>
+using namespace std;
+void readnumber(int& N,int& M) {
+	cout << "enter a number: ";
+	cin >> N;
+	cout << "enter M: ";
+	cin >> M;
+}
+int powofM(int N,int M) {
+	int count = 1;
+	while (M >= 1) {
+		count *= N;
+		M--;
+	}
+	return count;
+}
+int main() {
+	int N,M;
+	readnumber(N,M);
+	cout << N << " power " << M << " is: " << powofM(N,M) << endl;
+}
