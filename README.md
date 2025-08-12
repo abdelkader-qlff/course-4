@@ -774,3 +774,30 @@ int main() {
 }
 
 problem #31:
+#include <iostream>
+using namespace std;
+int readnumber(int& N) {
+	cout << "enter a number: ";
+	cin >> N;
+	return N;
+}
+int powof2(int N) {
+	return N * N;
+}
+void powof3(int N) {
+	int pow = N * N * N;
+	cout << N << " power 3 is: " << pow << endl;
+}
+int powof4(int N) {
+	return N * N * N * N;
+}
+int main() {
+	int N;
+	readnumber(N);
+	
+	cout << N << " power 2 is: " << powof2(N) << endl;
+	powof3(N);
+	cout << N << " power 4 is: " << powof4(N) << endl;
+}
+
+problem #31:
