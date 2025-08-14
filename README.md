@@ -901,3 +901,91 @@ int main() {
 }
 
 problem #36:
+#include <iostream>
+using namespace std;
+void readinfo(int& num1, int& num2, char& operationtype) {
+	cout << "enter number 1: ";
+	cin >> num1;
+	cout << "enter number 2: ";
+	cin >> num2;
+	cout << "enter the operation type: ";
+	cin >> operationtype;
+}
+char operationtypechoice(char operationtype) {
+	if (operationtype == '+')
+		return '+';
+	else if (operationtype == '-')
+		return '-';
+	else if (operationtype == '*')
+		return '*';
+	else
+		return '/';
+}
+void printresultofcalculation(int num1, int num2, char operationtype) {
+	double result = 0;
+	switch (operationtype) {
+	case '+':
+		result = num1 + num2;
+		break;
+	case '-':
+		result = num1 - num2;
+		break;
+	case '*':
+		result = num1 * num2;
+		break;
+	case '/':
+		if (num2 != 0)
+			result = num1 / num2;
+		else
+			cout << "Error!\nDevision by zero!\n";
+		break;
+	default:
+		cout << "Invalid operation\n" << result;
+	}
+	cout << "\n\tThe result: " << result << endl;
+}
+int main() {
+	int num1, num2;
+	char operationtype;
+	readinfo(num1,num2,operationtype);
+	operationtypechoice(operationtype);
+	printresultofcalculation(num1, num2,operationtype);
+}
+
+other solution:
+#include <iostream>
+using namespace std;
+float readinfo(string message) {
+	int number;
+	cout << message;
+	cin >> number;
+	return number;
+}
+enum enoperationtype { Add = '+', subtract = '-', multiply = '*', devide = '/' };
+enoperationtype readopty() {
+	char opty = '+';
+	cout << "enter an operation type(+,-,*,/): ";
+	cin >> opty;
+	return (enoperationtype)opty;
+}
+float calculation(float number1, float number2, enoperationtype opty) {
+	switch (opty) {
+	case enoperationtype::Add:
+		return number1 + number2;
+	case enoperationtype::subtract:
+		return number1 - number2;
+	case enoperationtype::multiply:
+		return number1 * number2;
+	default:
+		return number1 / number2;
+	}
+}
+int main() {
+	float number1 = readinfo("enter your first number: ");
+	float number2 = readinfo("enter the second number:");
+	enoperationtype opty = readopty();
+	cout << "\n\tthe result: " << calculation(number1, number2, opty);
+}
+
+
+problem #37:
