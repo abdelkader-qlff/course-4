@@ -822,3 +822,82 @@ int main() {
 	readnumber(N,M);
 	cout << N << " power " << M << " is: " << powofM(N,M) << endl;
 }
+
+problem #34:
+#include <iostream>
+using namespace std;
+//int readgrade(int& grade) {
+//	cout << "enter your grade: ";
+//	cin >> grade;
+//	return grade;
+//}
+int rangeofgrades(int from, int to) {
+	int grade;
+	do {
+		cout << "put a grade between 0 to 100: ";
+		cin >> grade;
+	} while (grade < from || grade > to);
+	return grade;
+}
+char translategradetoword(int grade) {
+	//if (grade > 100 || grade < 0) {
+	//	cout << "wrong\nTry again: ";
+	//	cin >> grade;
+	//}
+	if (grade == 100) 
+		return 'A';
+	else if (grade >= 90)
+		return 'B';
+	else if (grade >= 80)
+		return 'C';
+	else if (grade >= 70)
+		return 'D';
+	else if (grade >= 50)
+		return 'E';
+	else if (grade >= 0 && grade <= 50)
+		return 'F';
+}
+void printgrade(char chargrade) {
+	cout << "\n\tyour grade is: " << chargrade << endl;
+}
+int main() {
+	int grade,from,to; 
+	/*readgrade(grade);*/
+	/*rangeofgrades(0,100);
+	char(translategradetoword(grade));
+	printgrade(translategradetoword(grade));*/
+	printgrade(translategradetoword(rangeofgrades(0, 100)));
+}
+
+problem #35:
+#include <iostream>
+#include <cmath>
+using namespace std;
+int readtotalsales() {
+	int sales;
+	cout << "enter your total sales amount: ";
+	cin >> sales;
+	return sales;
+}
+float calculatewithpercentage(float sales) {
+	if (sales >= 1000000)
+		return (sales * 1) / 100;
+	else if (sales >= 500000)
+		return (sales * 2) / 100;
+	else if (sales >= 100000)
+		return (sales * 3) / 100;
+	else if (sales >= 50000)
+		return (sales * 5) / 100;
+	else
+		return (sales * 0) / 100;
+}
+float printtotalcomission(float sales) {
+	cout << "\n\ttotal comission: " << sales << endl;
+	return sales;
+}
+int main() {
+	float sales = readtotalsales();
+	printtotalcomission(calculatewithpercentage(sales));
+}
+
+problem #36:
