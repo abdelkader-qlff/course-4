@@ -989,3 +989,32 @@ int main() {
 
 
 problem #37:
+#include <iostream>
+using namespace std;
+void readnumbers(int& numbers) {
+	cout << "enter number ";
+	
+	/*return numbers;*/
+}
+float calculateresult(int numbers) {
+	int x = -99;
+	float sum = 0;
+	int num = 1;
+	while (numbers != -99) {
+		if (numbers != -99)
+			sum += numbers;
+		readnumbers(numbers);
+		cout << num++ << " : ";
+		cin >> numbers;
+	}
+	return sum;
+}
+void printresult() {
+	int numbers{};
+	cout << endl << "\tThe result: " << calculateresult(numbers) << endl;
+}
+int main() {
+	printresult();
+}
+
+problem #38:
