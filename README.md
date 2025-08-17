@@ -1018,3 +1018,37 @@ int main() {
 }
 
 problem #38:
+#include <iostream>
+#include <string>
+using namespace std;
+enum enprimenotprime { Impair = 1, Pair = 2 };
+int readnums(string message) {
+	int number;
+	cout << message << endl;
+	cin >> number;
+	return number;
+}
+enprimenotprime checknums(int number) {
+	//int M = round(number / 2);
+	for (int counter = 2; counter <= number; counter++) {
+		if (number % counter == 0)
+			return enprimenotprime::Pair;
+		else
+			return enprimenotprime::Impair;
+	}
+}
+void printresult(int number) {
+	switch (checknums(number)) {
+	case enprimenotprime::Impair:
+		cout << "\n\tthe number is Impair\n";
+		break;
+	case enprimenotprime::Pair:
+		cout << "\n\tthe number is Pair";
+		break;
+	}
+}
+int main() {
+	printresult(readnums("enter your number: "));
+}
+
+problem #39:
