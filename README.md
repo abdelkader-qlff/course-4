@@ -1052,3 +1052,26 @@ int main() {
 }
 
 problem #39:
+#include <iostream>
+#include <string>
+using namespace std;
+int readnum(string message) {
+	int number;
+	cout << message << endl;
+	cin >> number;
+	return number;
+}
+float calculatepaidback(int number1, int number2) {
+	return number1 - number2;
+}
+void printresult(float paidback) {
+	cout << "\n\tPaid Back: " << paidback << endl;
+}
+int main() {
+	int number1 = readnum("enter Total Bill number: ");
+	int number2 = readnum("enter Cash Paid number: ");
+
+	printresult(calculatepaidback(number1, number2));
+}
+
+problem #39:
