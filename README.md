@@ -1105,3 +1105,63 @@ int main() {
 }
 
 problem #40:
+#include <iostream>
+#include <string>
+using namespace std;
+int readinfo(string message) {
+	int billvalue;
+	do {
+		cout << message << endl;
+		cin >> billvalue;
+	} while (billvalue <= 0);
+	return billvalue;
+}
+float calculateservicefee(int billvalue) {
+	float servicefee = (billvalue * 10) / 100;
+	return servicefee;
+}
+float calculatesalestax(int billvalue) {
+	float salestax = ((billvalue + calculateservicefee(billvalue)) * 16) / 100;
+	return salestax;
+}
+float calculatebillvalue(int billvalue) {
+	return billvalue + calculateservicefee(billvalue) + calculatesalestax(billvalue);
+}
+void printtotalbillvalue(int billvalue) {
+	cout << "\n\tTotal Bill Value: " << calculatebillvalue(billvalue) << endl;
+}
+int main() {
+	int billvalue = readinfo("enter Bill Value: ");
+	printtotalbillvalue(billvalue);
+}
+
+problem #41:
+#include <iostream>
+#include <string>
+using namespace std;
+int readnumberofhours(string message) {
+	int numberofhours;
+	do {
+		cout << message;
+		cin >> numberofhours;
+	} while (numberofhours <= 0);
+	return numberofhours;
+}
+float calculatenumberofweeks(float numberofhours) {
+	return numberofhours / 168;
+}
+float calculatenumberofdays(float numberofhours) {
+	return numberofhours / 24;
+}
+void printdaysandweeks(float numberofhours) {
+	cout << "************************" << endl;
+	cout << "Number Of Weeks: " << calculatenumberofweeks(numberofhours) << endl;
+	cout << "Number Of Days: " << calculatenumberofdays(numberofhours) << endl;
+	cout << "************************" << endl;
+}
+int main() {
+	int numberofhours = readnumberofhours("enter the number of hours: ");
+	printdaysandweeks(numberofhours);
+}
+
+problem #42:
