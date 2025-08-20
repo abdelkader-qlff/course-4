@@ -1148,15 +1148,16 @@ int readnumberofhours(string message) {
 	return numberofhours;
 }
 float calculatenumberofweeks(float numberofhours) {
-	return numberofhours / 168;
+	return numberofhours / 24 / 7;
 }
 float calculatenumberofdays(float numberofhours) {
 	return numberofhours / 24;
 }
 void printdaysandweeks(float numberofhours) {
 	cout << "************************" << endl;
-	cout << "Number Of Weeks: " << calculatenumberofweeks(numberofhours) << endl;
-	cout << "Number Of Days: " << calculatenumberofdays(numberofhours) << endl;
+	cout << "Total Of Hours: " << numberofhours << endl;
+	cout << "Total Of Weeks: " << calculatenumberofweeks(numberofhours) << endl;
+	cout << "Total Of Days: " << calculatenumberofdays(numberofhours) << endl;
 	cout << "************************" << endl;
 }
 int main() {
