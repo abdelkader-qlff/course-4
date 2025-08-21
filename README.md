@@ -1166,3 +1166,42 @@ int main() {
 }
 
 problem #42:
+#include <iostream>
+#include <string>
+using namespace std;
+int enterduration(string message) {
+	int duration = 0;
+	do {
+		cout << message;
+		cin >> duration;
+	} while (duration <= 0);
+	return duration;
+}
+float calculatedaystoseconds(int days) {
+	return days * 60 * 60 * 24;
+}
+float calculatehourstoseconds(int hours) {
+	return hours * 60 * 60;
+}
+float calculateminutestoseconds(int minutes) {
+	return minutes * 60;
+}
+float calculateseconds(int seconds) {
+	return seconds;
+}
+void printtotalseconds(int days,int hours,int minutes,int seconds) {
+	int totalduration = calculatedaystoseconds(days)
+		+ calculatehourstoseconds(hours)
+		+ calculateminutestoseconds(minutes)
+		+ calculateseconds(seconds);
+	cout << "\n\tTotal Of Seconds: " << totalduration << endl;
+}
+int main() {
+	int days = enterduration("enter total of days: ");
+	int hours = enterduration("enter total of hours: ");
+	int minutes = enterduration("enter total of minutes: ");
+	int seconds = enterduration("enter total of seconds: ");
+	printtotalseconds(days,hours,minutes,seconds);
+}
+
+problem #43:
