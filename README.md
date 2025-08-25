@@ -1204,4 +1204,39 @@ int main() {
 	printtotalseconds(days,hours,minutes,seconds);
 }
 
+other solution:
+#include <iostream>
+#include <string>
+using namespace std;
+struct sttimes{int numofseconds,numofminutes,numofhours,numofdays;};
+int readpositivenum(string message) {
+	int number;
+	do {
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+	return number;
+}
+sttimes sttransfertnums() {
+	sttimes times;
+	times.numofseconds = readpositivenum("Enter number of seconds: ");
+	times.numofminutes = readpositivenum("Enter number of minutes: ");
+	times.numofhours = readpositivenum("Enter number of hours: ");
+	times.numofdays = readpositivenum("Enter number of days: ");
+	
+	return times;
+}
+int totalduration(sttimes times) {
+	int durationinseconds = 0;
+	durationinseconds = times.numofseconds;
+	durationinseconds = times.numofminutes * 60;
+	durationinseconds = times.numofhours * 60 * 60;
+	durationinseconds = times.numofdays * 60 * 60 * 24;
+
+	return durationinseconds;
+}
+int main() {
+	cout << "\n\tThe total duration is: " << totalduration(sttransfertnums()) << endl;
+}
+
 problem #43:
