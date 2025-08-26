@@ -1228,10 +1228,10 @@ sttimes sttransfertnums() {
 }
 int totalduration(sttimes times) {
 	int durationinseconds = 0;
-	durationinseconds = times.numofseconds;
-	durationinseconds = times.numofminutes * 60;
-	durationinseconds = times.numofhours * 60 * 60;
-	durationinseconds = times.numofdays * 60 * 60 * 24;
+	durationinseconds += times.numofseconds;
+	durationinseconds += times.numofminutes * 60;
+	durationinseconds += times.numofhours * 60 * 60;
+	durationinseconds += times.numofdays * 60 * 60 * 24;
 
 	return durationinseconds;
 }
