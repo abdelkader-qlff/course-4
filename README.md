@@ -1240,3 +1240,47 @@ int main() {
 }
 
 problem #43:
+#include <iostream>
+#include <string>
+using namespace std;
+struct sttimes { int numofdays, numofhours, numofminutes, numofseconds; };
+int readpositivenum(string message) {
+	int number;
+	do {
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+	return number;
+}
+sttimes sttransfertnums(int totalseconds) {
+	sttimes times;
+	const int secondsperdays = 24 * 60 * 60;
+	const int secondsperhours = 60 * 60;
+	const int secondsperminutes = 60;
+
+	int remainder = 0;
+	times.numofdays = floor(totalseconds / secondsperdays);
+	remainder = totalseconds % secondsperdays;
+	times.numofhours = floor(remainder / secondsperhours);
+	remainder %= secondsperhours;
+	times.numofminutes = floor(remainder / secondsperminutes);
+	remainder %= secondsperminutes;
+	times.numofseconds = remainder;
+
+	return times;
+}
+void totalduration(sttimes times) {
+
+	cout << "\n\ttotal durations: ";
+	cout << times.numofdays << ":";
+	cout << times.numofhours << ":";
+	cout << times.numofminutes << ":";
+	cout << times.numofseconds << endl;
+
+}
+int main() {
+	int totalseconds = readpositivenum("enter total seconds: ");
+	totalduration(sttransfertnums(totalseconds));
+}
+
+problem #44:
