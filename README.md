@@ -1284,3 +1284,96 @@ int main() {
 }
 
 problem #44:
+#include <iostream>
+#include <string>
+using namespace std;
+enum endays { sunday = 1, monday, thusday, wednesday, thuersday, friday, saturday };
+int numofday(string message,int from,int to) {
+	int day = 0;
+	do {
+		cout << message;
+		cin >> day;
+	} while (day < from || day > to);
+	return day;
+}
+endays readnumofday() {
+	return endays(numofday("please enter number of day(should be between 1 and 7):\n", 1, 7));
+}
+string getdayofweek(endays day) {
+	cout << "\n\tIt's ";
+	switch (day) {
+	case endays::sunday:
+		return "Sunday";
+	case endays::monday:
+		return "Monday";
+	case endays::thusday:
+		return "Thusday";
+	case endays::wednesday:
+		return "Wednesday";
+	case endays::thuersday:
+		return "Thuersday";
+	case endays::friday:
+		return "Friday";
+	case endays::saturday:
+		return "Saturday";
+	default:
+		return "Wrong number";
+	}
+	cout << endl;
+}
+int main() {
+	cout << getdayofweek(readnumofday());
+}
+
+problem #45: 
+#include <iostream>
+#include <string>
+using namespace std;
+enum enmonths { jan = 1, feb, mar, apr, may, june, july, aout, sep, oct, nov, dec };
+int enreadnumofmonth(string message, int from, int to) {
+	int month = 0;
+	do {
+		cout << message;
+		cin >> month;
+	} while (month < from || month > to);
+	return month;
+}
+enmonths readnumofmonth() {
+	return enmonths(enreadnumofmonth("enter number of month(should be between 1 and 12): ", 1, 12));
+}
+string printmonthofyear(enmonths month) {
+	cout << "\n\tIt's ";
+	switch (month) {
+	case enmonths::jan:
+		return "January";
+	case enmonths::feb:
+		return "February";
+	case enmonths::mar:
+		return "March";
+	case enmonths::apr:
+		return "April";
+	case enmonths::may:
+		return "May";
+	case enmonths::june:
+		return "June";
+	case enmonths::july:
+		return "July";
+	case enmonths::aout:
+		return "August";
+	case enmonths::sep:
+		return "September";
+	case enmonths::oct:
+		return "October";
+	case enmonths::nov:
+		return "November";
+	case enmonths::dec:
+		return "December";
+	default:
+		return "Ivalid number";
+	}
+}
+int main() {
+	cout << printmonthofyear(readnumofmonth()) << endl;
+}
+
+problem #46:
