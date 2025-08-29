@@ -1377,3 +1377,57 @@ int main() {
 }
 
 problem #46:
+#include <iostream>
+using namespace std;
+void printletters() {
+	for (int i = 65; i <= 90; i++) {
+		cout << char(i) << endl;
+	}
+}
+int main() {
+	printletters();
+}
+
+problem #47:
+#include <iostream>
+#include <string>
+using namespace std;
+float readinfo(string message) {
+	int amount = 0;
+	do {
+		cout << message;
+		cin >> amount;
+	} while (amount <= 0);
+	return amount;
+}
+float totalmonths(float totalamount, float monthlyinstalment) {
+	return totalamount / monthlyinstalment;
+}
+int main() {
+	float totalamount = readinfo("enter the total amount: ");
+	float monthlyinstalment = readinfo("enter your monthly instalment: ");
+	cout << "\n\tthe total months: " << totalmonths(totalamount,monthlyinstalment) << endl;
+}
+
+problem #48:
+#include <iostream>
+#include <string>
+using namespace std;
+float readinfo(string message) {
+	int amount = 0;
+	do {
+		cout << message;
+		cin >> amount;
+	} while (amount <= 0);
+	return amount;
+}
+float monthlyinstalment(float totalamount, float months) {
+	return float(totalamount / months);
+}
+int main() {
+	float totalamount = readinfo("enter the total amount: ");
+	float months = readinfo("how many month: ");
+	cout << "\n\tyou need " << monthlyinstalment(totalamount,months) << " to complet your amount due" << endl;
+}
+
+problem #49:
