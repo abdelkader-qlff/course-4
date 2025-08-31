@@ -1431,3 +1431,66 @@ int main() {
 }
 
 problem #49:
+#include <iostream>
+using namespace std;
+string readpincode() {
+	string PINATM;
+	cout << "enter PIN code: ";
+	cin >> PINATM;
+	cout << endl;
+	return PINATM;
+}
+bool login() {
+	const string PIN = "1234";
+	string PINATM = readpincode();
+	while (PINATM != PIN) {
+		system("color 4F");
+		cout << "Wrong PIN\n";
+		PINATM = readpincode();
+	}
+	return true;
+}
+int main() {
+	if (login()) {
+		system("color 2F");
+		cout << "your balance account " << 7500 << endl;
+	}
+}
+
+problem #50:
+#include <iostream>
+using namespace std;
+string readpincode() {
+	string PINATM;
+	cout << "enter PIN code: ";
+	cin >> PINATM;
+	cout << endl;
+	return PINATM;
+}
+bool login() {
+	const string PIN = "1234";
+	string PINATM = readpincode();
+	int chance = 3;
+
+	for (; chance > 0; chance--) {
+		if (PINATM == PIN) {
+			return true;
+		}
+		else{
+			system("color 4F");
+			cout << "Wrong PIN\n";
+			cout << "you have " << chance << endl;
+			PINATM = readpincode();
+		}
+			
+	}
+	return false;
+}
+int main() {
+	if (login()) {
+		system("color 2F");
+		cout << "your balance account " << 7500 << endl;
+	}
+	else
+		cout << "your card blocked please call the bank for help\n";
+}
